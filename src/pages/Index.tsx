@@ -1,7 +1,7 @@
-
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { LessonCard } from "@/components/LessonCard";
+import { ImageUpload } from "@/components/ImageUpload";
 
 const lessons = [
   {
@@ -40,6 +40,14 @@ const Index = () => {
               Start your Dutch learning journey today
             </p>
           </div>
+          
+          <div className="mb-12">
+            <ImageUpload />
+          </div>
+
+          <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">
+            Lessons
+          </h2>
           
           <div className="space-y-4">
             {lessons.map((lesson) => (
