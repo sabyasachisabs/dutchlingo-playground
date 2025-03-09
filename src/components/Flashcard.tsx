@@ -1,13 +1,15 @@
 
 import { useState } from "react";
 import { BookOpen } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 interface FlashcardProps {
   front: string;
   back: string;
+  icon?: LucideIcon;
 }
 
-export const Flashcard = ({ front, back }: FlashcardProps) => {
+export const Flashcard = ({ front, back, icon: Icon = BookOpen }: FlashcardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -27,7 +29,7 @@ export const Flashcard = ({ front, back }: FlashcardProps) => {
           }`}
         >
           <div className="p-3 bg-primary/10 rounded-lg">
-            <BookOpen className="h-6 w-6 text-primary" />
+            <Icon className="h-6 w-6 text-primary" />
           </div>
           <p className="text-2xl font-display text-gray-900">{front}</p>
           <p className="text-sm text-gray-500">Click to reveal translation</p>
@@ -40,7 +42,7 @@ export const Flashcard = ({ front, back }: FlashcardProps) => {
           }`}
         >
           <div className="p-3 bg-secondary/10 rounded-lg">
-            <BookOpen className="h-6 w-6 text-secondary" />
+            <Icon className="h-6 w-6 text-secondary" />
           </div>
           <p className="text-2xl font-display text-gray-900">{back}</p>
           <p className="text-sm text-gray-500">Click to flip back</p>
