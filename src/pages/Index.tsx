@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { LessonCard } from "@/components/LessonCard";
 import { ImageUpload } from "@/components/ImageUpload";
+import { Button } from "@/components/ui/button";
+import { PenSquare } from "lucide-react";
 
 const lessons = [
   {
@@ -45,9 +47,18 @@ const Index = () => {
             <ImageUpload />
           </div>
 
-          <h2 className="text-2xl font-display font-bold text-gray-900 mb-6">
-            Lessons
-          </h2>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-display font-bold text-gray-900">
+              Lessons
+            </h2>
+            <Button
+              onClick={() => navigate('/handwriting-assessment')}
+              className="flex items-center gap-2"
+            >
+              <PenSquare className="h-4 w-4" />
+              Writing Assessment
+            </Button>
+          </div>
           
           <div className="space-y-4">
             {lessons.map((lesson) => (
